@@ -2,6 +2,8 @@
 
 [Sentry](https://sentry.io/) is a cross-platform crash reporting and aggregation platform.
 
+This is a fork of official Helm Chart with the support of external postgresql and redis host support.
+
 ## TL;DR;
 
 ```console
@@ -12,9 +14,9 @@ $ helm install --wait stable/sentry
 
 This chart bootstraps a [Sentry](https://sentry.io/) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
-It also packages the [PostgreSQL](https://github.com/kubernetes/charts/tree/master/stable/postgresql) and [Redis](https://github.com/kubernetes/charts/tree/master/stable/redis) which are required for Sentry.
+You need to have the [PostgreSQL](https://github.com/kubernetes/charts/tree/master/stable/postgresql) and [Redis](https://github.com/kubernetes/charts/tree/master/stable/redis) deployed which are required for Sentry.
 
-> **Warning**: This chart does not yet allow for you to specify your own database host or redis host.
+> **Warning**: This chart requires for you to specify your own database host and redis host.
 
 ## Prerequisites
 

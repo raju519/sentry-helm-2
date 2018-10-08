@@ -68,19 +68,18 @@ user:
   # Indicated to create the admin user or not,
   # Default is true as the initial installation.
   create: true
-  email: dev@primeapps.io
-  password: 'pr!m€Apps!0'
+  email: admin@sentry.local
   
 # BYO Email server
 # TODO: Add exim4 template
 # https://docs.sentry.io/server/installation/docker/#outbound-email
 email:
-  from_address: sentry@primeapps.io
-  host: smtp.mailtrap.io
+  from_address: admin@sentry.local
+  host: sentry
   port: 587
   use_tls: false
-  user: b12c70f7f50ca9
-  password: 2cfb87c728981a
+  user: sentry
+  password: sentry
   enable_replies: false
 
 # Name of the service and what port to expose on the pod
@@ -122,33 +121,33 @@ persistence:
 ##
 ingress:
   enabled: true
-  hostname: sentry-dev.primeapps.io
+  hostname: sentry.local
 
   ## Ingress annotations
   ##
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: 'true'
+  ## annotations:
+  ##  kubernetes.io/ingress.class: nginx
+  ##  kubernetes.io/tls-acme: 'true'
 
   ## Ingress TLS configuration
   ## Secrets must be manually created in the namespace
   ##
-  tls:
-     - secretName: sentry-dev.primeapps.io
-       hosts:
-         - sentry-dev.primeapps.io
+  tls: []
+  #   - secretName: sentry.local
+  #    hosts:
+  #       - sentry.local
 
 # TODO: add support for plugins https://docs.sentry.io/server/plugins/
 
 postgresql:
-  host: pg-dev.primeapps.io
-  user: postgres
-  password: 'pr!m€Appsi0'
+  host: sentry
+  user: sentry
+  password: sentry
   database: sentry
 
 redis:
-  host: redis-dev.primeapps.io
-  password: 'pr!m€Apps!0D€v'
+  host: sentry
+  password: sentry
 
 config:
   configYml: ""

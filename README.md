@@ -5,7 +5,18 @@
 This is a fork of official Helm Chart with the support of external postgresql and redis host support.
 
 ## TL;DR;
-First download or clone this repository, then:
+First download or clone this repository, then set the correct values for postgresql and redis and install. 
+```yaml
+postgresql:
+  host: sentry
+  user: sentry
+  password: sentry
+  database: sentry
+
+redis:
+  host: sentry
+  password: sentry
+```
 ```console
 $ helm install --wait .
 ```
